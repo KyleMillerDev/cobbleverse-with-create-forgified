@@ -1,0 +1,165 @@
+{
+  "schema_version": "2",
+  "failed_reloads_per_session": 5,
+  "default_packs": [
+    "vanilla",
+    "fabric",
+    "cobbreeding:pasturefix",
+    "highlight:highlight_extended",
+    "betterbeds:fancyconnectedbeds",
+    "continuity:default",
+    "continuity:glass_pane_culling_fix",
+    "file/Comforts Modernized - V1.1.zip",
+    "file/Cobblemon Classic Grass Pack v1.0 MC1.21.1.zip",
+    "file/Cobblemon 3D Poké Rods 1.0.zip",
+    "file/Cobblemon Interface v1.6.0.zip",
+    "file/Cobblemon Interface Modded v1.9.4.zip",
+    "cobblemon:gyaradosjump",
+    "cobblemon:uniqueshinyforms",
+    "mega_showdown:gyaradosjumpingmega",
+    "cobblemon:regionbiasforms",
+    "mega_showdown:regionbiasmsd",
+    "file/Fully Hisuian Starters.zip",
+    "file/CCCC-1.7.2.zip",
+    "file/CurseForge RP.zip",
+    "file/FreshAnimations_v1.10.3.zip",
+    "file/-1.21.2 Fresh Moves v3.1 (With Animated Eyes).zip",
+    "file/Icon Fresh 0.4.zip",
+    "file/E19 Cobblemon Minimap Icons.zip",
+    "file/COBBLEVERSE Soundtrack.zip",
+    "file/COBBLEVERSE RCTmod RP.zip",
+    "file/COBBLEVERSE RP [CF].zip"
+  ],
+  "pack_overrides": {
+    "file/COBBLEVERSE RP [CF].zip": {
+      "title": "\"§e§lCOBBLEVERSE\"",
+      "description": "\"§a✔ Main Resource Pack\n§f© §cLUMY§bVERSE §f[v12-CF]\""
+    },
+    "file/COBBLEVERSE RCTmod RP.zip": {
+      "title": "\"§e§lCOBBLEVERSE X RCTmod\"",
+      "description": "\"§a✔ Animated Skins for Trainers\n§f© §cLUMY§bVERSE §f[v11]\""
+    },
+    "file/CurseForge RP.zip": {
+      "title": "\"§e§lCurseForge RP\"",
+      "description": "\"§a✔ Adds Emissive Textures\n§f© Various Artists §f[v4]\""
+    },
+    "file/COBBLEVERSE Soundtrack.zip": {
+      "title": "\"§e§lCOBBLEVERSE Soundtrack\"",
+      "description": "\"§a✔ Custom Background Music\n§f© Pokestir & Zame\""
+    },
+    "file/E19 Cobblemon Minimap Icons.zip": {
+      "title": "\"§e§lE19 - Minimap Icons\"",
+      "description": "\"§a✔ Pokémon for Xaero's Minimap\n§f© Emery319\""
+    },
+    "file/Icon Fresh 0.4.zip": {
+      "title": "\"§e§lXaero's X FreshAnimations\"",
+      "description": "\"§a✔ FA Icons for Xaero's Minimap\n§f© Godkyo98\""
+    },
+    "file/-1.21.2 Fresh Moves v3.1 (With Animated Eyes).zip": {
+      "title": "\"§e§lFresh Moves\"",
+      "description": "\"§a✔ With Animated Eyes\n§f© TrasTick\""
+    },
+    "file/FreshAnimations_v1.10.3.zip": {
+      "title": "\"§e§lFresh Animations\"",
+      "description": "\"§a✔ Dynamic Animated Entities\n§f© FreshLX\"",
+      "force_compatible": true
+    },
+    "file/CCCC-1.7.2.zip": {
+      "title": "\"§e§lCompleteCobblemonCollect.\"",
+      "description": "\"§a✔ Adds 200+ Pokémon\n§f© Xcavalier\""
+    },
+    "file/Fully Hisuian Starters.zip": {
+      "title": "\"§e§lFully Hisuian Starters\"",
+      "description": "\"§a✔ Look as their Final Evolution\n§f© SwordEnd\"",
+      "force_compatible": true
+    },
+    "cobblemon:regionbiasforms": {
+      "title": "\"§e§lRegion Bias Forms\"",
+      "description": "\"§a✔ Visual Differences\n§f© Cobbled Studios §7(built-in)\""
+    },
+    "mega_showdown:gyaradosjumpingmega": {
+      "title": "\"§e§lGyarados Jump Mega\"",
+      "description": "\"§a✔ Mega Textures\n§f© Mega Showdown §7(built-in)\""
+    },
+    "mega_showdown:regionbiasmsd": {
+      "title": "\"§e§lRegion Bias Gmax\"",
+      "description": "\"§a✔ Gmax Textures\n§f© Mega Showdown §7(built-in)\""
+    },
+    "cobblemon:uniqueshinyforms": {
+      "title": "\"§e§lShinies for Magikarp Jump\"",
+      "description": "\"§a✔ Shiny Textures\n§f© Cobbled Studios §7(built-in)\""
+    },
+    "cobblemon:gyaradosjump": {
+      "title": "\"§e§lGyarados Jump Patterns\"",
+      "description": "\"§a✔ Gyarados Forms\n§f© Cobbled Studios §7(built-in)\""
+    },
+    "file/Cobblemon Interface Modded v1.9.4.zip": {
+      "title": "\"§e§lInterface Modded\"",
+      "description": "\"§a✔ Mod Supported GUI\n§f© VinnyStalck\""
+    },
+    "file/Cobblemon Interface v1.6.0.zip": {
+      "title": "\"§e§lCobblemon Interface\"",
+      "description": "\"§a✔ Pokémon Inspired GUI\n§f© VinnyStalck\""
+    },
+    "file/Cobblemon 3D Poké Rods 1.0.zip": {
+      "title": "\"§e§lCobblemon 3D Poké Rods\"",
+      "description": "\"§a✔ 3D models for Poké Rods\n§f© Akera099\""
+    },
+    "file/Cobblemon Classic Grass Pack v1.0 MC1.21.1.zip": {
+      "title": "\"§e§lClassic Grass Pack\"",
+      "description": "\"§a✔ Pokémon Grass Textures\n§f© WizzStar\""
+    },
+    "file/Comforts Modernized - V1.1.zip": {
+      "title": "\"§e§lComforts Modernized\"",
+      "description": "\"§a✔ Modern Comforts Textures\n§f© Pedro9006\"",
+      "force_compatible": true
+    },
+    "continuity:glass_pane_culling_fix": {
+      "title": "\"§e§lGlass Pane Culling Fix\"",
+      "description": "\"§a✔ Cull Faces between Glass\n§f© Pepper_Bell §7(built-in)\""
+    },
+    "continuity:default": {
+      "title": "\"§e§lConnected Textures\"",
+      "description": "\"§a✔ Glass/Sandstone/Bookshelf\n§f© Pepper_Bell §7(built-in)\""
+    },
+    "betterbeds:fancyconnectedbeds": {
+      "title": "\"§e§lFancy Connected Beds\"",
+      "description": "\"§a✔ Beds look Fancier\n§f© Motschen §7(built-in)  \""
+    },
+    "highlight:highlight_extended": {
+      "title": "\"§e§lHighlight Extended\"",
+      "description": "\"§a✔ Fixed Blocks Hitboxes\n§f© Team Resourceful §7(built-in)\"",
+      "force_compatible": true
+    },
+    "cobbreeding:pasturefix": {
+      "title": "\"§e§lPasture Block Fix\"",
+      "hidden": true
+    },
+    "fabric": {
+      "title": "\"§e§lFabric Mods\"",
+      "hidden": true
+    },
+    "vanilla": {
+      "title": "\"§e§lDefault\"",
+      "hidden": true
+    },
+    "high_contrast": {
+      "title": "\"§e§lHigh Contrast\"",
+      "hidden": true
+    },
+    "musicnotification:dark_mode": {
+      "title": "\"§e§lMusic Notification: Dark Mode\"",
+      "hidden": true
+    },
+    "programmer_art": {
+      "title": "\"§e§lProgrammer Art\"",
+      "hidden": true
+    },
+    "carved_wood:recarved": {
+      "hidden": true
+    }
+  },
+  "default_overrides": {
+    "force_compatible": true
+  }
+}

@@ -1,0 +1,7 @@
+useMapCreationHeight = true
+fixedHeight = 100
+creationHeightEntries = []
+
+[[fixedEntries]]
+dimension = "minecraft:the_nether"
+height = 40

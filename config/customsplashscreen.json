@@ -1,0 +1,15 @@
+{
+  "progressBarType": "Vanilla",
+  "logoStyle": "Hidden",
+  "backgroundImage": true,
+  "logoBlend": true,
+  "splashBackgroundColor": "#EF323D",
+  "splashProgressBarColor": "#FFDE00",
+  "splashProgressFrameColor": "#3B4CCA",
+  "splashProgressBackgroundColor": "#000000",
+  "progressBarBackground": false,
+  "customProgressBarMode": "Linear",
+  "spinningCircleSize": 2,
+  "spinningCircleSpeed": 4,
+  "spinningCircleTrail": 16
+}

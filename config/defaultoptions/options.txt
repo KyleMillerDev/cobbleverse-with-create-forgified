@@ -1,0 +1,23 @@
+version:3955
+biomeBlendRadius:3
+enableVsync:true
+entityShadows:true
+fov:0.25
+gamma:1.0
+guiScale:3
+maxFps:260
+renderDistance:8
+simulationDistance:9
+screenEffectScale:0.65
+operatorItemsTab:true
+realmsNotifications:false
+narratorHotkey:false
+resourcePacks:["vanilla","fabric","cobbreeding:pasturefix","highlight:highlight_extended","betterbeds:fancyconnectedbeds","continuity:default","continuity:glass_pane_culling_fix","file/Comforts Modernized - V1.1.zip","file/Cobblemon Classic Grass Pack v1.0 MC1.21.1.zip","file/Cobblemon 3D Poké Rods 1.0.zip","file/Cobblemon Interface v1.6.0.zip","file/Cobblemon Interface Modded v1.9.4.zip","cobblemon:gyaradosjump","cobblemon:uniqueshinyforms","mega_showdown:gyaradosjumpingmega","cobblemon:regionbiasforms","mega_showdown:regionbiasmsd","file/Fully Hisuian Starters.zip","file/CCCC-1.7.2.zip","file/CurseForge RP.zip","file/FreshAnimations_v1.10.3.zip","file/-1.21.2 Fresh Moves v3.1 (With Animated Eyes).zip","file/Icon Fresh 0.4.zip","file/E19 Cobblemon Minimap Icons.zip","file/COBBLEVERSE Soundtrack.zip","file/COBBLEVERSE RCTmod RP.zip","file/COBBLEVERSE RP [CF].zip"]
+chatHeightFocused:0.44082856514084506
+chatHeightUnfocused:0.2537687059859155
+skipMultiplayerWarning:true
+debugifyTelemetry:0
+telemetryOptInExtra:false
+onboardAccessibility:false
+soundCategory_music:0.3327629841549297
+modelPart_cape:false

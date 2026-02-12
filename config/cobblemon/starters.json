@@ -1,0 +1,126 @@
+{
+  "allowStarterOnJoin": true,
+  "promptStarterOnceOnly": false,
+  "useConfigStarters": false,
+  "starters": [
+    {
+      "name": "Kanto",
+      "displayName": "cobblemon.starterselection.category.kanto",
+      "pokemon": [
+        "Charmander level=5",
+        "Squirtle level=5",
+        "Bulbasaur level=5"
+      ]
+    },
+    {
+      "name": "Johto",
+      "displayName": "cobblemon.starterselection.category.johto",
+      "pokemon": [
+        "Cyndaquil level=5",
+        "Totodile level=5",
+        "Chikorita level=5"
+      ]
+    },
+    {
+      "name": "Hoenn",
+      "displayName": "cobblemon.starterselection.category.hoenn",
+      "pokemon": [
+        "Torchic level=5",
+        "Mudkip level=5",
+        "Treecko level=5"
+      ]
+    },
+    {
+      "name": "Sinnoh",
+      "displayName": "cobblemon.starterselection.category.sinnoh",
+      "pokemon": [
+        "Chimchar level=5",
+        "Piplup level=5",
+        "Turtwig level=5"
+      ]
+    },
+    {
+      "name": "Unova",
+      "displayName": "cobblemon.starterselection.category.unova",
+      "pokemon": [
+        "Tepig level=5",
+        "Oshawott level=5",
+        "Snivy level=5"
+      ]
+    },
+    {
+      "name": "Kalos",
+      "displayName": "cobblemon.starterselection.category.kalos",
+      "pokemon": [
+        "Fennekin level=5",
+        "Froakie level=5",
+        "Chespin level=5"
+      ]
+    },
+    {
+      "name": "Alola",
+      "displayName": "cobblemon.starterselection.category.alola",
+      "pokemon": [
+        "Litten level=5",
+        "Popplio level=5",
+        "Rowlet level=5"
+      ]
+    },
+    {
+      "name": "Galar",
+      "displayName": "cobblemon.starterselection.category.galar",
+      "pokemon": [
+        "Scorbunny level=5",
+        "Sobble level=5",
+        "Grookey level=5"
+      ]
+    },
+    {
+      "name": "Hisui",
+      "displayName": "cobblemon.starterselection.category.hisui_bias",
+      "pokemon": [
+        "Cyndaquil region_bias=hisui level=5 pokeball=ancient_poke_ball",
+        "Oshawott region_bias=hisui level=5 pokeball=ancient_poke_ball",
+        "Rowlet region_bias=hisui level=5 pokeball=ancient_poke_ball"
+      ]
+    },
+    {
+      "name": "Paldea",
+      "displayName": "cobblemon.starterselection.category.paldea",
+      "pokemon": [
+        "Fuecoco level=5",
+        "Quaxly level=5",
+        "Sprigatito level=5"
+      ]
+    },
+    {
+      "name": "Pallet",
+      "displayName": "Pallet",
+      "pokemon": [
+        "Pikachu level=5",
+        "Eevee level=5",
+        "Pichu level=5 region_bias=alola"
+      ]
+    },
+    {
+      "name": "Lumya",
+      "displayName": "Lumya",
+      "pokemon": [
+        "Bagon level=5 pokeball=great_ball",
+        "Azurill level=5 gender=female pokeball=great_ball",
+        "Budew level=5 gender=female pokeball=great_ball"
+      ]
+    },
+    {
+      "name": "Cosplay",
+      "displayName": "Cosplay",
+      "pokemon": [
+        "Pikachu level=5 cosplay=belle",
+        "Pikachu level=5 cosplay=libre",
+        "Pikachu level=5 cosplay=phd",
+        "Pikachu level=5 cosplay=pop_star",
+        "Pikachu level=5 cosplay=rock_star"
+      ]
+    }
+  ]
+}

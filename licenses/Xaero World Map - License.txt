@@ -1,0 +1,6 @@
+Using it in your modpacks is allowed with the following conditions:
+
+Only monetization of the modpack through CurseForge or Modrinth is allowed (which includes sponsored links/banners in your modpack description), unless I have given you written permission to monetize it elsewhere. Feel free to private message me about it. I'm more likely to give you permission than not.
+If the modpack is distributed outside of CurseForge and Modrinth, then you must credit me by providing an easily accessible link to one of my official pages for the mod, to the users outside of CurseForge and Modrinth. 
+The name and/or description of the modpack must not be easily confused with the names/descriptions of my mods.
+If I have given you written permission to monetize the modpack outside of CurseForge and Modrinth, then, if I request you to, you must remove monetization outside of CurseForge and Modrinth.

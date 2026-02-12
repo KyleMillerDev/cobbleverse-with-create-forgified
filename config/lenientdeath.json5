@@ -1,0 +1,589 @@
+{
+	/* Options relating to handling this config file. Note that disabling any of these options might requires you
+	   to restart the server to enable changes.
+	*/
+	config: {
+		/* Should Lenient Death watch this config file for changes, and auto reload them? Useful for servers.
+		   Options: true, false
+		   Default: true
+		*/
+		enableFileWatcher: true,
+		/* Whether to remove these comments from the config file. Not recommended.
+		   Options: true, false
+		   Default: false
+		*/
+		stripComments: false,
+	},
+	/* Options relating to Lenient Death's '/ld' command. Used to configure the mod in-game, as well as to manage
+	   per-player mode if enabled.
+	*/
+	command: {
+		/* List of names to use for the command, in case one conflicts. To disable, remove all names and have an
+		   empty list []. Requires a world reload / server restart for changes to take effect.
+		   Options: Any string without whitespace.
+		   Default: ["lenientdeath", "ld"]
+		*/
+		commandNames: [
+			"lenientdeath",
+			"ld",
+		],
+	},
+	/* Lenient Death can print a player's death coordinates in chat when they die, allowing players without minimaps
+	   to find their way back.
+	*/
+	deathCoordinates: {
+		/* Whether players should be sent the coordinates they died at.
+		   Options: true, false
+		   Default: true
+		*/
+		sendToDeadPlayer: true,
+		/* Whether a player's death coordinates should be sent to the server log / console.
+		   Options: true, false
+		   Default: true
+		*/
+		sendToServerLog: true,
+		/* Whether a player's death coordinates should be sent to other online admins.
+		   Options: true, false
+		   Default: false
+		*/
+		sendToOtherAdmins: false,
+	},
+	/* Sometimes stuff happens - Lenient Death remembers your inventories from previous deaths and allows admins to
+	   restore them if needed.
+	*/
+	restoreInventory: {
+		/* The maximum amount of inventories to save. Set to 0 to disable.
+		   Options: [0, 25]
+		   Default: 5
+		*/
+		maxInventoriesSaved: 5,
+		/* Whether restoring inventories should also restore the experience value at the time of death.
+		   Options: true, false
+		   Default: false
+		*/
+		restoreExperience: false,
+	},
+	/* Allows you to use Lenient Death on a per-player basis. This can be used if only some of your players want
+	   to use the mod. Affects item and XP preservation on death.
+	   Per-player mode can also be used with a permission plugin / mod, which will overwrite these settings.
+	   See the wiki for more details.
+	*/
+	perPlayer: {
+		/* The default enabled state for players when they join. If true, Lenient Death is enabled by default for
+		   new players.
+		   Options: true, false
+		   Default: true
+		*/
+		defaultEnabledForPlayer: true,
+		/* Whether the player should be able to change their own per-player setting, using the Lenient Death
+		   command. Admins can always change their own and other players' settings.
+		   Options: true, false
+		   Default: true
+		*/
+		playersCanChangeTheirOwnSetting: true,
+	},
+	/* When players die, any dropped items from their inventory will have a glowing outline shown through walls,
+	   in order to help them find and recover their items. This outline only shows to the player who died and their
+	   team, unless changed in the settings.
+	*/
+	droppedItemGlow: {
+		/* Should this feature be enabled?
+		   Options: true, false
+		   Default: true
+		*/
+		enabled: true,
+		/* Who should we show a dead player's items' outlines to?
+		   Options: dead_player, dead_player_and_team, everyone
+		   Default: dead_player_and_team
+		*/
+		glowVisibility: "dead_player",
+		/* Only applies if glowVisibility is set to 'dead_player_and_team'. If a player who is not on a team dies,
+		   should we show the item glow to other players not on a team?
+		   Options: true, false
+		   Default: false
+		*/
+		noTeamIsValidTeam: false,
+	},
+	/* By default, when a player dies their drops will despawn after 5 minutes. With this option, you can extend this
+	   so players are under less pressure to get their items back.
+	*/
+	extendedDeathItemLifetime: {
+		/* Should this feature be enabled?
+		   Options: true, false
+		   Default: false
+		*/
+		enabled: true,
+		/* How long should a dead player's dropped items last before despawning, in seconds? Ignored if items are set
+		   to never despawn.
+		   Options: Any number in the range [0, 1800] (0 minutes to 30 minutes). Vanilla despawn time is 300 seconds,
+		            or 5 minutes. Setting a value below 300 will actually make items despawn sooner than vanilla.
+		   Default: 900 (15 minutes).
+		*/
+		deathDropItemLifetimeSeconds: 900,
+		/* Should items dropped on a player's death never despawn? Please be aware that this may cause performance
+		   issues over a long period of time if players never try to recover their items as they will accumulate.
+		   To mitigate this, any item entities made to never despawn will be given the 'LENIENT_DEATH_INFINITE_LIFETIME'
+		   tag, so you can use the command '/kill @e[type=item,tag=LENIENT_DEATH_INFINITE_LIFETIME,nbt={Age: -32768s}]'
+		   to remove them.
+		   Options: true, false
+		   Default: false
+		*/
+		deathDropItemsNeverDespawn: false,
+	},
+	/* This feature allows you to give additional protection to item entities that were dropped on death, including
+	   fire, cactus, void recovery, blanket damage protection and more.
+	*/
+	itemResilience: {
+		/* Whether all items dropped from a player's death should be fire and lava-proof.
+		   Options: true, false
+		   Default: false
+		*/
+		allDeathItemsAreFireProof: false,
+		/* Whether all items dropped from a player's death should be immune to cacti.
+		   Options: true, false
+		   Default: false
+		*/
+		allDeathItemsAreCactusProof: false,
+		/* Whether all items dropped from a player's death should be immune to explosions.
+		   Options: true, false
+		   Default: false
+		*/
+		allDeathItemsAreExplosionProof: false,
+		/* Features related to handling item drops when a player dies to the void; for example if they fall off the
+		   end island, or are playing SkyBlock.
+		*/
+		voidRecovery: {
+			/* How death drop items that fall into the void should be handled?
+			   Options:
+			     - disabled (despawn items as vanilla)
+			     - last_grounded_position (teleport to last position either the player or the item was on a solid block)
+			     - preserve (keep items in the inventory even if they wouldn't normally; applies to everyone)
+			   Default: last_grounded_position
+			*/
+			mode: "last_grounded_position",
+			/* When a player dies to the void, should Lenient Death notify them where their items were moved to? Only
+			   applies if mode = last_grounded_position.
+			   This option exists because players who may not be aware of this feature probably would not look for
+			   their items otherwise.
+			   Options: true, false
+			   Default: true
+			*/
+			announce: false,
+		},
+	},
+	/* This feature will keep track of which inventory slot a death item is dropped from, and try to move it back to that
+	   slot on pickup. For example, dropped armour will be put back on.
+	*/
+	moveToOriginalSlots: {
+		/* Should this feature be enabled?
+		   Options: true, false
+		   Default: true
+		*/
+		enabled: true,
+	},
+	/* In Vanilla, when a player dies they lose all of their experience, a small part of which is dropped as XP orbs.
+	   This feature lets you keep all or a portion of your experience when you die. Can be used on as part of the
+	   per-player feature.
+	*/
+	preserveExperienceOnDeath: {
+		/* Should this feature be enabled?
+		   Per-player mode can be overwritten by the appropriate permission, see the wiki for more details.
+		   Options: yes, per_player, no
+		   Default: no
+		*/
+		enabled: "no",
+		/* What percentage of a player's experience should be dropped on death?
+		   Options: [0, 100]
+		   Default: 60
+		*/
+		preservedPercentage: 60,
+	},
+	/* When a dead player's inventory is dropped, certain items can be kept based on their type, NBT, or an
+	   allow or block-list. Can be used on as part of the per-player feature.
+	   
+	   These rules are evaluated in the following order:
+	   NBT -> Always Dropped List -> Always Preserved List -> Item Type -> Randomizer
+	*/
+	preserveItemsOnDeath: {
+		/* Should this feature be enabled?
+		   Per-player mode can be overwritten by the appropriate permission, see the wiki for more details.
+		   Options: yes, per_player, no
+		   Default: yes
+		*/
+		enabled: "yes",
+		/* Allows you to preserve items based on the presence of an NBT tag. Note that Lenient Death doesn't add this
+		   NBT tag to items for you, they will need to be added via another method.
+		*/
+		nbt: {
+			/* Whether preserving based off a certain item NBT tag should be enabled.
+			   Options: true, false
+			   Default: false
+			*/
+			enabled: false,
+			/* The name of the NBT tag to look for. This is expected to be a Boolean, i.e. in the form {Soulbound: 1b}.
+			   Options: A single word.
+			   Default: 'Soulbound'
+			*/
+			nbtKey: "Soulbound",
+		},
+		/* Configures which items should always be dropped on death, ignoring the other settings based on NBT
+		   or type settings. Takes precedence over the Always Preserved config.
+		*/
+		alwaysDropped: {
+			/* Which items should always be dropped on a player's death?
+			   Options: 0 or more Item IDs, in the form "minecraft:golden_pickaxe". If an item by a given ID doesn't exist,
+			            a warning will be logged to the console.
+			   Default: Empty list
+			*/
+			items: [],
+			/* Which item tags should always be dropped on a player's death?
+			   Options: 0 or more Item IDs, in the form "minecraft:swords" without a '#'. If a tag by a given ID doesn't
+			            exist, a warning will be logged to the console.
+			   Default: Empty list
+			*/
+			tags: [],
+		},
+		/* Configures which items should always be kept on death, ignoring the other settings based on NBT
+		   or type settings. Has a lower priority than the Always Dropped filter.
+		*/
+		alwaysPreserved: {
+			/* Which items should always be kept on a player's death?
+			   Options: 0 or more Item IDs, in the form "minecraft:golden_pickaxe". If an item by a given ID doesn't exist,
+			            a warning will be logged to the console.
+			   Default: Empty list
+			*/
+			items: [
+				"cobblemon:pokedex_red",
+				"cobblemon:pokedex_blue",
+				"cobblemon:pokedex_black",
+				"cobblemon:pokedex_green",
+				"cobblemon:pokedex_pink",
+				"cobblemon:pokedex_yellow",
+				"cobblemon:pokedex_white",
+				"cobblemon:master_ball",
+				"cobblemon:ancient_origin_ball",
+				"rctmod:trainer_card",
+				"sophisticatedbackpacks:backpack",
+				"sophisticatedbackpacks:copper_backpack",
+				"sophisticatedbackpacks:iron_backpack",
+				"sophisticatedbackpacks:gold_backpack",
+				"sophisticatedbackpacks:diamond_backpack",
+				"sophisticatedbackpacks:netherite_backpack",
+				"minecraft:written_book",
+				"minecraft:filled_map",
+				"mega_showdown:mega_bracelet",
+				"mega_showdown:mega_bracelet_blue",
+				"mega_showdown:mega_bracelet_red",
+				"mega_showdown:mega_bracelet_black",
+				"mega_showdown:mega_bracelet_green",
+				"mega_showdown:mega_bracelet_yellow",
+				"mega_showdown:mega_bracelet_pink",
+				"mega_showdown:may_bracelet",
+				"mega_showdown:mega_ring",
+				"mega_showdown:lysandre_ring",
+				"mega_showdown:brendan_mega_cuff",
+				"mega_showdown:korrina_glove",
+				"mega_showdown:maxie_glasses",
+				"mega_showdown:archie_anchor",
+				"mega_showdown:lisia_mega_tiara",
+				"mega_showdown:tera_orb",
+				"mega_showdown:omni_ring",
+				"mega_showdown:z_ring",
+				"mega_showdown:z_ring_black",
+				"mega_showdown:z_ring_yellow",
+				"mega_showdown:z_ring_green",
+				"mega_showdown:z_ring_blue",
+				"mega_showdown:z_ring_pink",
+				"mega_showdown:z_ring_red",
+				"mega_showdown:z_power_ring",
+				"mega_showdown:olivias_z_ring",
+				"mega_showdown:olivia_z_power_ring",
+				"mega_showdown:hapus_z_ring",
+				"mega_showdown:hapus_z_power_ring",
+				"mega_showdown:rocket_z_power_ring",
+				"mega_showdown:gladion_z_power_ring",
+				"mega_showdown:nanu_z_power_ring",
+				"mega_showdown:dynamax_band",
+				"cobbleversebadges:kanto_boulder_badge",
+				"cobbleversebadges:kanto_cascade_badge",
+				"cobbleversebadges:kanto_thunder_badge",
+				"cobbleversebadges:kanto_rainbow_badge",
+				"cobbleversebadges:kanto_soul_badge",
+				"cobbleversebadges:kanto_marsh_badge",
+				"cobbleversebadges:kanto_volcano_badge",
+				"cobbleversebadges:kanto_earth_badge",
+				"cobbleversebadges:johto_zephyr_badge",
+				"cobbleversebadges:johto_hive_badge",
+				"cobbleversebadges:johto_plain_badge",
+				"cobbleversebadges:johto_fog_badge",
+				"cobbleversebadges:johto_storm_badge",
+				"cobbleversebadges:johto_mineral_badge",
+				"cobbleversebadges:johto_glacier_badge",
+				"cobbleversebadges:johto_rising_badge",
+				"cobbleversebadges:hoenn_stone_badge",
+				"cobbleversebadges:hoenn_knuckle_badge",
+				"cobbleversebadges:hoenn_dynamo_badge",
+				"cobbleversebadges:hoenn_heat_badge",
+				"cobbleversebadges:hoenn_balance_badge",
+				"cobbleversebadges:hoenn_feather_badge",
+				"cobbleversebadges:hoenn_mind_badge",
+				"cobbleversebadges:hoenn_rain_badge",
+				"cobbleversebadges:sinnoh_coal_badge",
+				"cobbleversebadges:sinnoh_forest_badge",
+				"cobbleversebadges:sinnoh_cobble_badge",
+				"cobbleversebadges:sinnoh_fen_badge",
+				"cobbleversebadges:sinnoh_relic_badge",
+				"cobbleversebadges:sinnoh_mine_badge",
+				"cobbleversebadges:sinnoh_icicle_badge",
+				"cobbleversebadges:sinnoh_beacon_badge",
+				"cobbleversebadges:kanto_league_trophy",
+				"cobbleversebadges:johto_league_trophy",
+				"cobbleversebadges:hoenn_league_trophy",
+				"cobbleversebadges:sinnoh_league_trophy",
+				"cobbleversebadges:kanto_badge_box",
+				"cobbleversebadges:johto_badge_box",
+				"cobbleversebadges:hoenn_badge_box",
+				"cobbleversebadges:sinnoh_badge_box",
+				"lumymon:apricorn_box",
+				"obc:bottle_cap",
+				"obc:bottle_cap_hp",
+				"obc:bottle_cap_attack",
+				"obc:bottle_cap_defence",
+				"obc:bottle_cap_special_attack",
+				"obc:bottle_cap_special_defence",
+				"obc:bottle_cap_speed",
+				"obc:bottle_cap_gold"
+			],
+			/* Which item tags should always be kept on a player's death?
+			   Options: 0 or more Item IDs, in the form "minecraft:swords" without a '#'. If a tag by a given ID doesn't
+			            exist, a warning will be logged to the console.
+			   Default: 'lenientdeath:safe'
+			*/
+			tags: [
+				"lenientdeath:safe",
+			],
+		},
+		/* Configures various options relating to Trinkets (https://modrinth.com/mod/trinkets).
+		   See also: $.preserveItemsOnDeath.byItemType.trinkets
+		*/
+		trinkets: {
+			/* Some Trinkets are designed to be destroyed upon death instead of dropped; Lenient Death can (though disabled
+			   by default) override this to keep instead.
+			   Options: true, false
+			   Default: false
+			*/
+			overrideDestroyRule: true,
+		},
+		/* Allows you to preserve or drop items based on their type (armour, weapon, food, etc). Has better compatibility
+		   with mods which don't add their items to various tags. Items part of multiple types will use the first result
+		   from the following order: drop > preserve > ignore.
+		*/
+		byItemType: {
+			/* Whether preserving based off item type should be enabled.
+			   Options: true, false
+			   Default: true
+			*/
+			enabled: false,
+			/* Should helmet-type equipment always drop, be preserved, or fall to further processing?
+			   Examples: Iron Helmet, Turtle Helmet
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			helmets: "preserve",
+			/* Should chestplate-type equipment always drop, be preserved, or fall to further processing?
+			   Example: Golden Chestplate
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			chestplates: "preserve",
+			/* Should elytra-type items always drop, be preserved, or fall to further processing?
+			   Example: Elytra
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			elytras: "preserve",
+			/* Should leggings-type equipment always drop, be preserved, or fall to further processing?
+			   Example: Diamond leggings
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			leggings: "preserve",
+			/* Should boots-type equipment always drop, be preserved, or fall to further processing?
+			   Example: Chainmail boots
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			boots: "preserve",
+			/* Should body-type equipment always drop, be preserved, or fall to further processing?
+			   Example: Wolf armour
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			body: "ignore",
+			/* Should shield-type items always drop, be preserved, or fall to further processing?
+			   Example: Shield
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			shields: "preserve",
+			/* Should other equippable items always drop, be preserved, or fall to further processing?
+			   Example: Skulls, Carved Pumpkins
+			   Options: drop, preserve, ignore
+			   Default: ignore
+			*/
+			otherEquippables: "ignore",
+			/* Should Trinkets (https://modrinth.com/mod/trinkets) always drop, be preserved, or fall to further
+			   processing? See $.preserveItemsOnDeath.trinkets for more compatibility options.
+			   Example: none in Vanilla; Totem of Undying if Charm of Undying (https://modrinth.com/mod/charm-of-undying) is installed.
+			   Default: preserve
+			*/
+			trinkets: "preserve",
+			/* Should sword-type items always drop, be preserved, or fall to further processing?
+			   Example: Wooden Sword
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			swords: "preserve",
+			/* Should trident-type items always drop, be preserved, or fall to further processing?
+			   Example: Wooden Sword
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			tridents: "preserve",
+			/* Should mace-type items always drop, be preserved, or fall to further processing?
+			   Example: Mace
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			maces: "preserve",
+			/* Should bow-type items always drop, be preserved, or fall to further processing?
+			   Example: Bow
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			bows: "preserve",
+			/* Should crossbow-type items always drop, be preserved, or fall to further processing?
+			   Example: Crossbow
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			crossbows: "preserve",
+			/* Should other projectile-launching items always drop, be preserved, or fall to further processing?
+			   Example: <None in Vanilla>
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			otherProjectileLaunchers: "preserve",
+			/* Should pickaxe-type items always drop, be preserved, or fall to further processing?
+			   Example: Netherite Pickaxe
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			pickaxes: "preserve",
+			/* Should shovel-type items always drop, be preserved, or fall to further processing?
+			   Example: Iron Shovel
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			shovels: "preserve",
+			/* Should axe-type items always drop, be preserved, or fall to further processing?
+			   Example: Diamond Axe
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			axes: "preserve",
+			/* Should hoe-type items always drop, be preserved, or fall to further processing?
+			   Example: Golden Hoe
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			hoes: "preserve",
+			/* Should other digging items not in the above categories always drop, be preserved, or fall to further
+			   processing?
+			   Example: <None in Vanilla>
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			otherDiggingItems: "preserve",
+			/* Should tools not in the above categories always drop, be preserved, or fall to further processing?
+			   Example: Brush, Spyglass, Goat Horn
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			otherTools: "preserve",
+			/* Should buckets always drop, be preserved, or fall to further processing?
+			   Example: Bucket, Bucket of Water, Bucket of Lava
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			buckets: "preserve",
+			/* Should food items always drop, be preserved, or fall to further processing?
+			   Example: Cooked Steak, Mushroom Stew
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			food: "preserve",
+			/* Should potion items always drop, be preserved, or fall to further processing?
+			   Example: Water Bottle, Potion of Instant Health II
+			   Options: drop, preserve, ignore
+			   Default: preserve
+			*/
+			potions: "preserve",
+			/* Should shulker boxes always drop, be preserved, or fall to further processing?
+			   Note: Items contained within won't be checked, so this may be used to cheese other settings.
+			   Example: Shulker Box
+			   Options: drop, preserve, ignore
+			   Default: ignore
+			*/
+			shulkerBoxes: "ignore",
+		},
+		/* Allows you to preserve items based on a random chance percentage. This is only applied to categories
+		   that haven't been decided by other modules.
+		*/
+		randomizer: {
+			/* Whether preserving undecided items using RNG should be enabled.
+			   Options: true, false
+			   Default: false
+			*/
+			enabled: false,
+			/* Whether to split stacks when randomly dropping items. If false, then a stack of 64 items will be treated as
+			   a whole, whereas if true then each item in the stack will be rolled.
+			   Options: true, false
+			   Default: true
+			*/
+			splitStacks: true,
+			/* What percentage of a player's undecided items be preserved on death? This is an average, and does
+			   not guarantee a set amount of items.
+			   Options: [0, 100]
+			   Default: 25
+			*/
+			preservedPercentage: 25,
+			/* How much a player's luck attribute should add to the item preservation chance. Also applies to
+			   negative luck. For more information, see https://minecraft.wiki/w/Attribute#Attributes_for_players
+			   
+			   Set to 0 to have no effect. Recommended to only have one of loadAdditiveFactor and
+			   luckMultiplierFactor be above 0 at one time.
+			   
+			   The final preservation chance is calculated as follows:
+			   chance = (preservedPercentage * (1 + (luckMultiplierFactor * playerLuck)) + (luckAdditiveFactor * playerLuck).
+			   Options: [0, 200]
+			   Default: 20
+			*/
+			luckAdditiveFactor: 20,
+			/* How much a player's luck attribute should multiply the item preservation chance. Also applies to
+			   negative luck. For more information, see https://minecraft.wiki/w/Attribute#Attributes_for_players
+			   
+			   Set to 0 to have no effect. Recommended to only have one of loadAdditiveFactor and
+			   luckMultiplierFactor be above 0 at one time.
+			   
+			   The final preservation chance is calculated as follows:
+			   chance = (preservedPercentage * (1 + (luckMultiplierFactor * playerLuck)) + (luckAdditiveFactor * playerLuck).
+			   Options: [0, 10]
+			   Default: 0
+			*/
+			luckMultiplierFactor: 0.0,
+		},
+	},
+	// Users: do not edit manually! Last saved mod version
+	"__version": "1.2.5+1.21.1",
+}

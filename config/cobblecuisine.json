@@ -1,0 +1,172 @@
+{
+  "CONFIG_VERSION_INTERNAL": 3,
+  "boostSettings": {
+    "effectDistanceBlocks": 40.0,
+    "expBoostMultiplier": 2.0,
+    "catchRateMultiplier": 2.0,
+    "shinyBoostMultiplier": 48.0,
+    "teraBoostChance": 0.95,
+    "natureBoostChance": 0.95,
+    "scaleMinValue": 0.9,
+    "scaleMaxValue": 1.1,
+    "ivMinValue": 20,
+    "ivMaxValue": 31,
+    "haBoostChance": 2.0
+  },
+  "itemSettings": {
+    "beanFriendship": 1,
+    "pokepuffFriendship": 6,
+    "malasadaFriendship": 12,
+    "lowShakeEv": 2,
+    "mediumShakeEv": 4,
+    "highShakeEv": 8
+  },
+  "effectDuration": {
+    "shinyBoostEffectDuration": 3000,
+    "expBoostEffectDuration": 6000,
+    "catchRateEffectDuration": 6000,
+    "typeBoostEffectDuration": 6000,
+    "teraBoostEffectDuration": 6000,
+    "eggBoostEffectDuration": 6000,
+    "natureBoostEffectDuration": 6000,
+    "statBoostEffectDuration": 6000,
+    "yieldBoostEffectDuration": 6000,
+    "scaleBoostEffectDuration": 6000,
+    "dubiousFoodEffectDuration": 6000
+  },
+  "dropRates": {
+    "beanSeedsDropRate": 0.1,
+    "galaricaNutDropRate": 0.25,
+    "beanDropRate": 0.25,
+    "torchflowerDropRate": 0.25,
+    "torchflowerSeedsDropRate": 0.25
+  },
+  "typeMultipliers": {
+    "bug": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "normal": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "fire": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "water": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "electric": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "grass": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "ice": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "fighting": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "poison": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "ground": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "flying": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "psychic": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "rock": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "ghost": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "dragon": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "steel": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "dark": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "fairy": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    }
+  },
+  "eggGroupMultipliers": {
+    "amorphous": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "fairy": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "bug": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "dragon": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "field": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "flying": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "grass": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "humanLike": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "mineral": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "monster": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "undiscovered": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "water1": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    },
+    "water23": {
+      "weightMultiplier": 5.0,
+      "nonWeightMultiplier": 0.1
+    }
+  }
+}
